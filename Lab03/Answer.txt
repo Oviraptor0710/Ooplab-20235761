@@ -1,0 +1,17 @@
+1. What class should implement the Comparable interface?
+- Giao diện Comparable nên được triển khai bởi bất kỳ lớp nào mà bạn muốn xác định một thứ tự sắp xếp tự nhiên cho các đối tượng của lớp đó.
+2. In those classes, how should you implement the compareTo()method to reflect the ordering that 
+we want? 
+- Để triển khai phương thức compareTo() một cách chính xác, bạn cần xác định một thứ tự sắp xếp nhất quán:
++ Trả về một số nguyên âm nếu đối tượng hiện tại nhỏ hơn đối tượng được so sánh.
+
++ Trả về 0 nếu cả hai đối tượng bằng nhau.
+
++ Trả về một số nguyên dương nếu đối tượng hiện tại lớn hơn đối tượng được so sánh.
+3. Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this 
+Comparable interface approach? 
+- Không vì giao diện Comparable chỉ cho phép một quy tắc sắp xếp tự nhiên duy nhất, được xác định bởi phương thức compareTo().
+4. Suppose the DVDs have a different ordering rule from the other media types, that is by title, then 
+decreasing length, then cost. How would you modify your code to allow this?
+- Trong lớp DVD, bạn có thể ghi đè phương thức compareTo() để áp dụng quy tắc sắp xếp riêng cho DVD – khác với các loại media khác.
+
