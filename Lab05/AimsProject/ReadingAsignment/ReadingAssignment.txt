@@ -1,0 +1,33 @@
+BÀI 16:
+1. Những lợi ích của Tính đa hình (Polymorphism) là gì?
+• Tái sử dụng mã: Cho phép dùng cùng một phương thức hoặc giao diện để làm việc
+với nhiều kiểu đối tượng khác nhau.
+• Linh hoạt và dễ bảo trì: Dễ mở rộng chương trình mà không cần chỉnh sửa nhiều mã
+hiện có.
+• Liên kết động (Dynamic dispatch): Chương trình quyết định phương thức cụ thể sẽ
+được gọi tại thời điểm chạy, dựa trên kiểu thực tế của đối tượng.
+• Mã dễ đọc hơn: Tính đa hình giúp viết mã gọn gàng, dễ hiểu hơn vì tập trung vào
+"việc cần làm" thay vì "làm như thế nào".
+2. Kế thừa (Inheritance) giúp đạt được Tính đa hình như thế nào trong Java?
+-Kế thừa là nền tảng để triển khai tính đa hình. Khi một lớp con kế thừa từ lớp cha, nó có
+thể:
+• Ghi đè (Override) các phương thức của lớp cha để cung cấp hành vi riêng.
+• Sử dụng chung giao diện hoặc lớp cha, cho phép đối tượng lớp con được xử lý
+thông qua tham chiếu lớp cha.
+=>Nhờ vậy, Java có thể gọi phương thức phù hợp với kiểu thực tế của đối tượng tại runtime.
+3. Sự khác nhau giữa Tính đa hình và Kế thừa trong Java là gì?
+• Tính kể thứa cho phép lớp con thừa kế các thuộc tính của lớp cha và thêm 1 số
+thuộc tính khác. Còn tính đa hình cho phép sử dụng cùng 1 giao diện cho các
+đầu vào khác nhau.
+BÀI 17:
+- Lớp Media nên khai triển Comparable vì nó là lớp cha nên những lớp con như book
+sẽ được kế thừa khả năng so sánh.
+- @Override
+public int compareTo(Media other) {
+int titleCompare = this.getTitle().compareToIgnoreCase(other.getTitle());
+if (titleCompare != 0) {
+return titleCompare;}
+return Float.compare(this.getCost(), other.getCost());
+} -
+Không thể có 2 quy tắc sắp xếp khác nhau.
+-Bạn có thể override compareTo() trong lớp DigitalVideoDisc để dùng quy tắc riêng.
